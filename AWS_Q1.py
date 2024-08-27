@@ -7,35 +7,30 @@ they should be sorted ascending.
 
 def sortArray(arr):
     """
-    This function takes an array and creates 2D list with element and its frequency
+    This function takes an array and creates a 2D list with element and its frequency,
+    sorted descending by frequency and ascending by element for equal frequencies.
     """
-    freq = []
-
-    for i in set(arr):
-        freq.append([i, arr.count(i)])
-        
-    result = sortByFreq_and_element(freq) 
-    return result
-
-
-
-def sortByFreq_and_element(arr):
-
-    """
-    This function takes a 2D array created in sortArray() function, 
-    and sorts in Descending order by frequency, 
-    and also, if the frequency if same, the elemets are sorted in ascending order
-    """
-
-    sorted_by_freq = sorted(arr, key=lambda x : (-x[1], x[0]))
-    return sorted_by_freq
+    # Create a dictionary to store the count of each number
+    count_dict = {}
+    for num in arr:
+        count_dict[num] = count_dict.get(num, 0) + 1
+    
+    # Sort the numbers based on frequency (descending) and then by value (ascending)
+    sorted_nums = sorted(count_dict.items(), key=lambda x: (-x[1], x[0]))
+    
+    # Format the output as requested
+    return [[num, count] for num, count in sorted_nums]
 
 def main():
-    # Example array
-    arr = [4, 3, 5, 3, 1, 2, 1, 4, 3, 5,7,7,7,7,7]
+    # Example arrays
+    arr1 = [4, 3, 5, 3, 1, 2, 1, 4, 3, 5, 7, 7, 7, 7, 7]
+    arr2 = [1, 1, 2, 3, 3]
 
-    result = sortArray(arr)
-    print("Frequency Array:", result)
+    result1 = sortArray(arr1)
+    result2 = sortArray(arr2)
+    
+    print("Frequency Array 1:", result1)
+    print("Frequency Array 2:", result2)
 
-if "__main__" == __name__:
+if __name__ == "__main__":
     main()
