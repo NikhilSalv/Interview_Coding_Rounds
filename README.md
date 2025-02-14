@@ -18,3 +18,8 @@ letter.
 'a', 'aa', and 'bababbb' match.
 'ab'and 'baba' do not match.
 
+- CodeSignal_1.py
+
+Even and odd sum in array
+
+
