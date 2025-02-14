@@ -22,4 +22,8 @@ letter.
 
 Even and odd sum in array
 
+- CodeSignal_2.py
+
+Command stack
+
 
