@@ -28,11 +28,37 @@ It can be achieved by freeing the first three shelves.
 All the shelves need to be freed
 """
 
+"""
+Approach:
+Sliding window : First, get the distinct elements.
+arr[R:] (R is the number of consecutive shelves to be removed)
+
+Check the number of unique elements and store in a variable (Max_unique). 
+
+For loop, which will run from R to N
+each loop will check the number of unique elements, and update the Max_unique variable.
+"""
+
 def solution(A, R):
-    pass
+    unique_elements = len(set(A))
+    # print(unique_elements)
+    N = len(A)
+    if N == unique_elements or unique_elements == 1:
+        return N - R
+    
+    max_unique = len(set(A[R:]))
+
+    for i in range(0,N-R):
+        print(f"Initial max :{max_unique}" )
+        max_unique = max(max_unique, len(set(A[:i] + A[i+R:] )))
+        print(f"changed max : >>{max_unique}" )
+        print(A[:i] + A[i+R:])
+
+    return max_unique
 
 if __name__ == "__main__":
-    A = [2,1,2,3,2,2]
+    A = [7, 2, 1, 2, 3, 2, 2]
     R = 3
+    solution(A, R)
     result = solution(A, R)
     print(result)
