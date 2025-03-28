@@ -3,6 +3,15 @@ There are two methods of a class Schedular, one method is to submit a job, which
 and another value is the weight of that job, which is in integer. If a job is submitted already, the weight gets added in the existing job.
 Another method is select, when it is called, it returns a job with maximun weight each time. For each call, it returns job with maximum weight.
 """
+import time 
+import logging
+
+logging.basicConfig(
+    filename='app.log',          # Log file name
+    level=logging.DEBUG,         # Set the logging level
+    format='%(asctime)s - %(levelname)s - %(message)s',  # Log format
+    datefmt='%Y-%m-%d %H:%M:%S'  # Date and time format
+)
 
 class Schedular:
 
@@ -10,9 +19,15 @@ class Schedular:
         self.job_dict = {}
 
     def submit(self, job):
-        if job[0] in self.job_dict.keys():
+        starttime = time.time()
+        if job[0] in self.job_dict:
             self.job_dict[job[0]] = self.job_dict[job[0]] + job[1]
+            endtime = time.time()
+            totaltime = endtime - starttime
+            logging.info(f"total time is {totaltime}")
+
             
+        
         else:
             self.job_dict[job[0]] = job[1]
             # print(self.job_dict)
