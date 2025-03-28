@@ -24,8 +24,29 @@ purchases = 130 - 115 = 15 additional units must be purchased
 
 """
 
-def restock(itemCount, target):
-    pass
+"""
+Approach : 
 
+While loop can be run until any of the two conditions are met :
+
+if index > len(itemCount)
+if target is achieved (total_units_purchased > target)
+"""
+
+def restock(itemCount, target):
+    index = 0
+    total_items_purchased = 0
+
+    while index < len(itemCount) and total_items_purchased < target:
+        total_items_purchased += itemCount[index]
+        index += 1
+    
+    if total_items_purchased < target:
+        return target - total_items_purchased
+    else:
+        return total_items_purchased - target
+    
 if __name__ == "__main__":
-    pass
+    itemCount = [10, 20, 30, 40, 15]
+    result = restock(itemCount, 80)
+    print(result)
