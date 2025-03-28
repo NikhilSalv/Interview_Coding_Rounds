@@ -28,12 +28,39 @@ int px/n]: an array of stock prices (quotes)
 
 Returns:
 int: the maximum difference between two prices as described above
+
+minimum_price = px[0]
+maximum_diff = -1
+
+for i in range(1,N)
+
+    if px[i] > minimum_price:
+        maximum_diff = px[i] - minimum_price
+    elif px[i] <= minimum_price:
+        minimum_price = px[i]
+ return maximum_diff
+
+
 """
 
-def maxDifference (px):
+def maxDifference(px):
+    N =len(px)
+    minimum_price = px[0]
+    max_diff = -1
 
-    pass
+    if not px or N < 2:
+        return -1
+
+    for i in range(1,N):
+        if minimum_price < px[i]:
+            max_diff = max(max_diff, px[i] - minimum_price)
+        else:
+            minimum_price = px[i]
+    return max_diff
 
 
 if __name__ == "__main__":
-    pass
+    px = [7, 1, 2, 5]
+    px1 = [7, 5, 3, 1]
+    result = maxDifference(px1)
+    print(result)
