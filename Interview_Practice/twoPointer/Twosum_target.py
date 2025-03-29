@@ -56,8 +56,28 @@ def find_sum_elememts(arr, target):
     return -1
 
 
-* Analyse time and space complexity
-- 
+* Analyse time  complexity
+- The function iterates through the array once → O(N).
+- Each dictionary operation (lookup and insertion) runs in O(1) on average.
+- Since we only traverse the array once and perform constant-time operations in each iteration, the overall time complexity is O(N).
+- Best Case (Early Return)
+> If a valid pair is found early (e.g., at index i=1), the function returns immediately.
+> In this case, the time complexity is O(1) to O(N), depending on how early the pair is found.
+- Worst Case
+If the pair is found at the last index or does not exist, the loop runs for all N elements.
+This results in O(N) complexity.
+
+* Analyse space complexity
+
+- A dictionary (visited) is used to store seen values and their indices.
+- In the worst case, the dictionary stores all N elements of the array.
+- Dictionary storage requires O(N) space.
+
+- Best Case (Early Return)
+> If a pair is found early, the dictionary stores only a few elements → O(1) space.
+
+- Worst Case
+> If no valid pair exists, all N elements are stored in visited → O(N) space.
 
 * Run through edge cases
 - Edge case if the list is empyt is implemented.
