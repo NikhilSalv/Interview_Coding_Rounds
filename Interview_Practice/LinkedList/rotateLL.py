@@ -47,14 +47,15 @@ def rotateRight(head, k):
     # link last node to first node
     print("lenght is : ", length)
     temp.next_node = head
-    print(temp.data)
-    print(temp.next_node.data)
+    # print(temp.data)
+    # print(temp.next_node.data)
     k = k % length  # when k is more than length of list
     end = length - k  # to get end of the list
     print("This is K  :", k)
     print("This is end :", end)
 
     while end:
+        print("IN while loop before", temp.data)
         temp = temp.next_node
         print("IN while loop", temp.data)
         
@@ -86,7 +87,7 @@ if __name__ == "__main__":
 
     print("Before")
     printList(head)
-    new_head = rotateRight(head, 3)
+    new_head = rotateRight(head, 2)
     print("After")
     printList(new_head)
 
