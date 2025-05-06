@@ -20,17 +20,19 @@ class Schedular:
 
     def submit(self, job):
         starttime = time.time()
-        if job[0] in self.job_dict:
-            self.job_dict[job[0]] = self.job_dict[job[0]] + job[1]
-            endtime = time.time()
-            totaltime = endtime - starttime
-            logging.info(f"total time is {totaltime}")
-
-            
-        
-        else:
-            self.job_dict[job[0]] = job[1]
-            # print(self.job_dict)
+        self.job_dict[job[0]] = self.job_dict.get(job[0], 0) + job[1]
+        endtime = time.time()
+        totaltime = endtime - starttime
+        logging.info(f"total time is {totaltime}")
+        # if job[0] in self.job_dict:
+        #     self.job_dict[job[0]] = self.job_dict[job[0]] + job[1]
+        #     endtime = time.time()
+        #     totaltime = endtime - starttime
+        #     logging.info(f"total time is {totaltime}")
+       
+        # else:
+        #     self.job_dict[job[0]] = job[1]
+        #     # print(self.job_dict)
 
     def select(self):
         max_job = list(self.job_dict.keys())[0]

@@ -49,4 +49,4 @@ def restock(itemCount, target):
 if __name__ == "__main__":
     itemCount = [10, 20, 30, 40, 15]
     result = restock(itemCount, 80)
-    print(result)
+    print(result) 
