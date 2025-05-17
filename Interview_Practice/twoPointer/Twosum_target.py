@@ -100,8 +100,21 @@ def find_sum_elememts(arr, target):
             return [visited[diff], i]
         visited[arr[i]] = i
     return -1
+
+def find_sum_elememts_optimal(arr, target):
+    N = len(arr)
+    left = 0
+    right = N - 1
+    while left < right:
+        if arr[left] + arr[right] == target:
+            return [left, right]
+        elif arr[left] + arr[right] < target:
+            left += 1
+        else:
+            right -= 1
+    return -1
     
 if __name__ == "__main__":
-    target = 5
-    arr = [1,3,6,1,7,8,0,77,54,2]
-    print(find_sum_elememts(arr, target))
+    target = 62
+    arr = [1,3,6,7,8,54,77,85]
+    print(find_sum_elememts_optimal(arr, target))
