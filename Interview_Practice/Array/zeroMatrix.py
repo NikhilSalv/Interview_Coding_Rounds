@@ -13,16 +13,13 @@ traverse through array, and mark -1 to all rows and columns as -1 wherewher we f
 
 then traverse throgh matrics again, and mark 0 wherewher there is -1
 
-
-
-
 """
-def markRow(matrix, n , m , i):
+def markRow(matrix, m , i):
     for j in range(m):
         if matrix[i][j] != 0:
             matrix[i][j] = -1
 
-def markCol(matrix, n , m , j):
+def markCol(matrix, n , j):
     for i in range(n):
         if matrix[i][j] != 0:
             matrix[i][j] = -1
@@ -36,8 +33,8 @@ def zero_matrix(matrix):
     for i in range(n):
         for j in range(m):
             if matrix[i][j] == 0:
-                markRow(matrix, n , m , i)
-                markCol(matrix, n , m , j)
+                markRow(matrix, m , i)
+                markCol(matrix, n , j)
     
     for i in range(n):
         for j in range(m):
@@ -46,6 +43,9 @@ def zero_matrix(matrix):
     
 
 if __name__ == "__main__":
-    matrix = [[1, 1, 1], [1, 0, 1], [1, 1, 1]]
+    matrix = [[1, 1, 1], 
+              [1, 0, 1], 
+              [1, 1, 1]]
     zero_matrix(matrix)
-    print(matrix)
+    for r in matrix:
+        print(r, " \n ")
