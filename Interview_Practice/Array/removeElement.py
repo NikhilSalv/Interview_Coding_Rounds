@@ -11,7 +11,7 @@ class Solution(object):
             if nums[i] != val:
                 nums[k] = nums[i]
                 k += 1
-        return k
+        return nums[:k]
 
 if __name__ == "__main__":
     nums = [3,2,2,3,4,5,6,7,3,3,1]  # Expected output 7

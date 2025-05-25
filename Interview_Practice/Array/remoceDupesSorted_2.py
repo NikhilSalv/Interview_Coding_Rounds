@@ -16,5 +16,5 @@ if __name__ == "__main__":
     nums = [1,1,1,1,1,1,2,3,4,4,6,6,6,6,6,7]  # Expected output 5
     num2 = [1,2,3]
     result = Solution()
-    print(result.removeDuplicates(num2))
+    print(result.removeDuplicates(nums))
     print(num2)
