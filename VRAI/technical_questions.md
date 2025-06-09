@@ -9,3 +9,5 @@ What is garbage collection in Python, and why is it needed?
 
 Garbage collection in Python is the process of automatically managing memory by reclaiming unused memory and cleaning up objects that are no longer in use.
 It ensures that memory occupied by objects that are no longer accessible is freed, preventing memory leaks.
+
+try , except and finally block .
