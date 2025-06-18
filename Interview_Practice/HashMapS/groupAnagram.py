@@ -33,3 +33,4 @@ if __name__ == "__main__":
     obj = Solution()
     print(obj.default_dict_groupAnagrams(strs))
     print(obj.groupAnagrams(strs))
+    

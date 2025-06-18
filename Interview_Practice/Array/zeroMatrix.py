@@ -23,8 +23,6 @@ def markCol(matrix, n , j):
     for i in range(n):
         if matrix[i][j] != 0:
             matrix[i][j] = -1
-        
-
 
 def zero_matrix(matrix):
     n = len(matrix)
