@@ -1,5 +1,6 @@
 """
-Given a matrix if an element in the matrix is 0 then you will have to set its entire column and row to 0 and then return the matrix.
+Given a matrix if an element in the matrix is 0 then you will have to set its entire 
+column and row to 0 and then return the matrix.
 
 clarifying questions : 
 what if the matrics is null.
@@ -9,7 +10,8 @@ any negatives or -1?
 
 brute force : 
 
-traverse through array, and mark -1 to all rows and columns as -1 wherewher we find zero, except that zero :
+traverse through array, and mark -1 to all rows and columns as -1 wherewher we find zero,
+except that zero :
 
 then traverse throgh matrics again, and mark 0 wherewher there is -1
 
