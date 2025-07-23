@@ -36,20 +36,10 @@ def reverseNodesK(linkedList, k):
         len += 1
         head = head.next
     len += 1
-    # head = linkedList
+    head = linkedList
 
     if k > len:
-        print("k : ", k , "Len : " , len)
-        prev = None
-        current = linkedList
-        print(current.val)
-        while current:
-            next_node = current.next
-            current.next = prev
-            prev = current
-            current = next_node
-
-        return linkedListToList(prev)
+        return linkedListToList(head)
     else:
         groups = len // k
         remaining =len % k
@@ -65,6 +55,9 @@ def reverseNodesK(linkedList, k):
                     current.next = prev
                     prev = current
                     current = next_node
+            
+            count += 1
+
 
 
 
