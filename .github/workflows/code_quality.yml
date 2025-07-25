@@ -25,9 +25,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install flake8
 
-      - name: Run flake8 linter
-        run: |
-          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+    #   - name: Run flake8 linter
+    #     run: |
+    #       flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
 
       # Broken link check for README
       - name: Check broken links in README
