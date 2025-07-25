@@ -59,8 +59,6 @@ def reverseNodesK(linkedList, k):
             count += 1
 
 
-
-
 if __name__ == "__main__":
     l1 = [9,2,9,3,21,12,58,1]
     l1_ll = createLinkedList(l1)
