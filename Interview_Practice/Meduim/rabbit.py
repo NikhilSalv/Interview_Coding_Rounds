@@ -31,7 +31,8 @@ def minimum_groups(ans):
 
 
 if __name__ == "__main__":
-    answers = [1,1,1]
+    answers = [1,1,1] # expected output 4
+    answers = [1,1,2] # expected output 5
     print(minimum_groups(answers))
 
 
