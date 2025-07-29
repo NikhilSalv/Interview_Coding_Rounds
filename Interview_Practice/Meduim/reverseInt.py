@@ -8,16 +8,30 @@ Assume the environment does not allow you to store 64-bit integers (signed or un
 
 class Solution(object):
     def reverse(self, x):
+        """
+        :type x: int
+        :rtype: int
+        """
+        INT_MAX = 2**31
+        INT_MIN = -2**31
         if 0 < x < 10:
             return x
         reversed = 0
+        flag = 1
+        if x < 0:
+            flag = -1
+            x = -x
         while x >= 1:
             last_digit = x % 10
+            if reversed > INT_MAX:
+                return 0
+
             reversed = (reversed + last_digit) * 10
             x = x // 10
-        return reversed // 10
+        return (reversed // 10) * flag
 
 
 if __name__ == "__main__":
-    x = 1432
-    print(Solution().reverse(x))
+    x = -2147483412
+    y = 1534236469
+    print(Solution().reverse(y))
