@@ -29,4 +29,5 @@ def validParenthesis(s):
 if __name__ == "__main__":
     s= "()[(})]"
     s1 = "(]"
-    print(validParenthesis(s))
+    s2 = "(({[]})"
+    print(validParenthesis(s2))
