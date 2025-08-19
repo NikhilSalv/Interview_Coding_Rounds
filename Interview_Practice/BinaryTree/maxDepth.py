@@ -21,8 +21,6 @@ def maxDepth(root):
 
     return 1 + max(right, leftdepth)
 
-    
-
 
 if __name__ == "__main__":
 
